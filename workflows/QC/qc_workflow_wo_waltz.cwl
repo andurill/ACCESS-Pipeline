@@ -16,6 +16,7 @@ requirements:
   InlineJavascriptRequirement: {}
 
 inputs:
+  project_name: string
   title_file: File
   inputs_yaml: File
   FP_config_file: File
@@ -38,6 +39,10 @@ outputs:
   combined_qc:
     type: Directory
     outputSource: group_qc_files/qc_files
+
+  tables:
+    type: Directory
+    outputSource: main_tables_module/tables
 
 steps:
 
@@ -262,20 +267,20 @@ steps:
   combine_qc:
     run: ../../cwl_tools/python/combine_qc_pdfs.cwl
     in:
-      title_file: title_file
-      read_counts: innovation_qc/read_counts
-      align_rate: innovation_qc/align_rate
-      mean_cov: innovation_qc/mean_cov
-      on_target_rate: innovation_qc/on_target_rate
-      gc_cov_each_sample: innovation_qc/gc_cov_each_sample
-      insert_sizes: innovation_qc/insert_sizes
-      coverage_per_interval: innovation_qc/coverage_per_interval
-      title_page: innovation_qc/title_page
-      pipeline_inputs: innovation_qc/pipeline_inputs
-      family_types: innovation_qc/family_types
-      family_sizes_all: innovation_qc/family_sizes_all
-      family_sizes_simplex: innovation_qc/family_sizes_simplex
-      family_sizes_duplex: innovation_qc/family_sizes_duplex
+      project_name: project_name
+      read_counts: main_plots_module/read_counts
+      align_rate: main_plots_module/align_rate
+      mean_cov: main_plots_module/mean_cov
+      on_target_rate: main_plots_module/on_target_rate
+      gc_cov_each_sample: main_plots_module/gc_cov_each_sample
+      insert_sizes: main_plots_module/insert_sizes
+      coverage_per_interval: main_plots_module/coverage_per_interval
+      title_page: main_plots_module/title_page
+      pipeline_inputs: main_plots_module/pipeline_inputs
+      family_types: main_plots_module/family_types
+      family_sizes_all: main_plots_module/family_sizes_all
+      family_sizes_simplex: main_plots_module/family_sizes_simplex
+      family_sizes_duplex: main_plots_module/family_sizes_duplex
       noise_alt_percent: duplex_noise_plots_A/noise_alt_percent
       noise_contributing_sites: duplex_noise_plots_A/noise_contributing_sites
       fingerprinting_qc: fingerprinting/FPFigures

@@ -8,10 +8,10 @@ baseCommand: [combine_qc_pdfs]
 
 inputs:
 
-  title_file:
-    type: File
+  project_name:
+    type: string
     inputBinding:
-      prefix: -t
+      prefix: -p
 
   title_page:
     type: File
