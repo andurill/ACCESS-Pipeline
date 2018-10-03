@@ -45,10 +45,6 @@ outputs:
     type: Directory
     outputSource: qc_workflow_wo_waltz/combined_qc
 
-  tables:
-    type: Directory
-    outputSource: qc_workflow_wo_waltz/tables
-
 steps:
 
   ##############
@@ -104,4 +100,4 @@ steps:
       waltz_unfiltered_pool_b: waltz_workflow/waltz_unfiltered_pool_b_files
       waltz_simplex_pool_b: waltz_workflow/waltz_simplex_pool_b_files
       waltz_duplex_pool_b: waltz_workflow/waltz_duplex_pool_b_files
-    out: [combined_qc, tables]
+    out: [combined_qc]

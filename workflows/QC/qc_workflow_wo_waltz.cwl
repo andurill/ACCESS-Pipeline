@@ -40,10 +40,6 @@ outputs:
     type: Directory
     outputSource: group_qc_files/qc_files
 
-  tables:
-    type: Directory
-    outputSource: main_tables_module/tables
-
 steps:
 
   ########################################

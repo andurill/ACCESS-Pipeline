@@ -112,10 +112,6 @@ outputs:
     type: Directory
     outputSource: qc_workflow/combined_qc
 
-  qc_tables:
-    type: Directory
-    outputSource: qc_workflow/tables
-
 steps:
 
   #####################
@@ -343,4 +339,4 @@ steps:
       marianas_simplex_bams: separate_bams/simplex_bam
       marianas_duplex_bams: separate_bams/duplex_bam
       FP_config_file: FP_config_file
-    out: [combined_qc, tables]
+    out: [combined_qc]
