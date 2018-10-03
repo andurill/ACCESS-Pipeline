@@ -228,7 +228,7 @@ steps:
   # Standard-QC #
   ###############
 
-  innovation_qc:
+  main_plots_module:
     run: ../../cwl_tools/python/innovation_qc.cwl
     in:
       title_file: title_file
