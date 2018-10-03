@@ -510,6 +510,10 @@ def write_inputs_file(args, title_file, output_file_name):
     include_run_params(fh, run_params_path)
     include_file_resources(fh, run_files_path)
     include_tool_resources(fh, tool_resources_file_path)
+    
+    if args.collapsing:
+        fh.write(INPUTS_FILE_DELIMITER)
+        include_collapsing_params(fh, args.test, args.local)
 
     fh.write(INPUTS_FILE_DELIMITER)
     # Include title_file in inputs.yaml
