@@ -8,6 +8,7 @@ requirements:
   MultipleInputFeatureRequirement: {}
   SubworkflowFeatureRequirement: {}
   ScatterFeatureRequirement: {}
+  InlineJavascriptRequirement: {}
 
 inputs:
   run_tools:
