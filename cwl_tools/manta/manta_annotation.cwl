@@ -35,6 +35,11 @@ inputs:
     inputBinding:
       position: 5
 
+  manta_python:
+    type: File
+    inputBinding:
+      position: 6
+
 outputs:
   manta_somatic_vcf:
     type: File
