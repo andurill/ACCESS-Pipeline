@@ -114,8 +114,6 @@ steps:
         valueFrom: $(inputs.run_tools.manta)
       manta_python:
         valueFrom: $(inputs.run_tools.manta_python)
-      java:
-        valueFrom: $(inputs.run_tools.java_8)
 
       vcf: manta/sv_vcf
       sample_id: sv_sample_id
@@ -124,7 +122,13 @@ steps:
       reference_fasta: ref_fasta
     scatter: [vcf, sample_id]
     scatterMethod: dotproduct
-    out: [sv_file_annotated]
+    out: [
+    manta_somatic_vcf,
+    manta_somatic_inv_corrected_vcf,
+    manta_somatic_inv_corrected_edited_vcf,
+    manta_somatic_inv_corrected_edited_tab,
+    sv_file_annotated,
+    sv_file_annotated_ev]
 
   combine_sv_vcfs:
     run: ../../cwl_tools/manta/manta_concat.cwl
