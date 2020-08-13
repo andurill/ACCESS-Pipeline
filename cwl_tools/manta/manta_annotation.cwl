@@ -10,9 +10,6 @@ arguments:
 - $(inputs.sv_repo.path + '/scripts/iAnnotateSV.sh')
 
 inputs:
-
-  sv_repo: Directory
-
   vcf:
     type: File
     inputBinding:
@@ -38,19 +35,33 @@ inputs:
     inputBinding:
       position: 5
 
-  manta_python:
-    type: string
-    inputBinding:
-      position: 6
-  
-  java:
-    type: string
-    inputBinding:
-      position: 7
-
 outputs:
+  manta_somatic_vcf:
+    type: File
+    outputBinding:
+      glob: $(inputs.sample_id + '_somaticSV.vcf')
+
+  manta_somatic_inv_corrected_vcf:
+    type: File
+    outputBinding:
+      glob: $(inputs.sample_id + '_somaticSV_inv_corrected.vcf')
+
+  manta_somatic_inv_corrected_edited_vcf:
+    type: File
+    outputBinding:
+      glob: $(inputs.sample_id + '_somaticSV_inv_corrected_edited.vcf')
+
+  manta_somatic_inv_corrected_edited_tab:
+    type: File
+    outputBinding:
+      glob: $(inputs.sample_id + '_somaticSV_inv_corrected_edited.tab')
 
   sv_file_annotated:
+    type: File
+    outputBinding:
+      glob: $(inputs.sample_id + '_Annotated.txt')
+
+  sv_file_annotated_ev:
     type: File
     outputBinding:
       glob: $(inputs.sample_id + '_Annotated_Evidence-annotated.txt')
