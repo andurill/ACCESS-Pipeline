@@ -7,4 +7,3 @@ sv_run_tools:
   sv_repo:
     { class: Directory, path: /home/jayakumg/software/ACCESS_tools/ACCESS_SV }
   manta_python: /dmp/resources/prod/tools/system/python/production/bin/python
-  java_8: /dmp/resources/prod/tools/system/java/jdk1.8.0_121/bin/java
