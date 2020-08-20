@@ -46,6 +46,30 @@ outputs:
     type: File[]
     outputSource: annotate_manta/sv_file_annotated
 
+  manta_somatic_vcf:
+    type: File[]
+    outputSource: annotate_manta/manta_somatic_vcf
+
+  manta_somatic_inv_corrected_vcf:
+    type: File[]
+    outputSource: annotate_manta/manta_somatic_inv_corrected_vcf
+
+  manta_somatic_inv_corrected_edited_vcf:
+    type: File[]
+    outputSource: annotate_manta/manta_somatic_inv_corrected_edited_vcf
+
+  manta_somatic_inv_corrected_edited_tab:
+    type: File[]
+    outputSource: annotate_manta/manta_somatic_inv_corrected_edited_tab
+
+  sv_file_annotated:
+    type: File[]
+    outputSource: annotate_manta/sv_file_annotated
+
+  sv_file_annotated_ev:
+    type: File[]
+    outputSource: annotate_manta/sv_file_annotated_ev
+
   concatenated_vcf:
     type: File
     outputSource: combine_sv_vcfs/concatenated_vcf
