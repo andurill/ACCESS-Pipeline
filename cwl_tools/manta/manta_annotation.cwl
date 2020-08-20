@@ -10,6 +10,8 @@ arguments:
 - $(inputs.sv_repo.path + '/scripts/iAnnotateSV.sh')
 
 inputs:
+  sv_repo: Directory
+
   vcf:
     type: File
     inputBinding:
@@ -36,7 +38,7 @@ inputs:
       position: 5
 
   manta_python:
-    type: File
+    type: string
     inputBinding:
       position: 6
 
@@ -69,4 +71,4 @@ outputs:
   sv_file_annotated_ev:
     type: File
     outputBinding:
-      glob: $(inputs.sample_id + '_Annotated_Evidence-annotated.txt')
+      glob: $(inputs.sample_id + '_Annotated_Evidence.txt')
