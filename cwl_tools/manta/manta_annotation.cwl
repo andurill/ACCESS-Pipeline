@@ -10,7 +10,8 @@ arguments:
 - $(inputs.sv_repo.path + '/scripts/iAnnotateSV.sh')
 
 inputs:
-  sv_repo: Directory
+  sv_repo:
+    type: string
 
   vcf:
     type: File
