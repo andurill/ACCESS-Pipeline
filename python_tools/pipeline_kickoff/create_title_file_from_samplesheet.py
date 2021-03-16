@@ -130,9 +130,8 @@ def create_title_file(samplesheet_file_path, output_filename):
     ].apply(projectid_format)
     if len(set(title_file[TITLE_FILE__BAIT_VERSION_COLUMN])) > 1:
         raise Exception("Samplesheet contains samples with mutliple bait version.")
-    if (
-        not set(title_file[TITLE_FILE__BAIT_VERSION_COLUMN]).pop()
-        == EXPECTED_BAIT_VERSION
+    if not (
+        set(title_file[TITLE_FILE__BAIT_VERSION_COLUMN]).pop() in EXPECTED_BAIT_VERSION
     ):
         raise Exception("Samplesheet bait version does not match the expected value.")
 
@@ -209,9 +208,11 @@ def create_title_file(samplesheet_file_path, output_filename):
 
     # infer sample type from sample id
     try:
-        title_file[TITLE_FILE__SAMPLE_TYPE_COLUMN] = title_file[
-            TITLE_FILE__SAMPLE_ID_COLUMN
-        ].str.split(SAMPLE_ID_ALLOWED_DELIMETER).str[SELECT_SPLIT_COLUMN]
+        title_file[TITLE_FILE__SAMPLE_TYPE_COLUMN] = (
+            title_file[TITLE_FILE__SAMPLE_ID_COLUMN]
+            .str.split(SAMPLE_ID_ALLOWED_DELIMETER)
+            .str[SELECT_SPLIT_COLUMN]
+        )
     except KeyError:
         raise Exception(
             "Error when interpreting sample type from sample_id. Ensure the sample-id are in the 00000000-X format."
