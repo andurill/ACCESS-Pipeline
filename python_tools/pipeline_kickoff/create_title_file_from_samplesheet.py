@@ -116,7 +116,7 @@ def create_title_file(samplesheet_file_path, output_filename):
         """
         if PROJECT_NAME.match(id):
             try:
-                return BAIT_SEARCH.findall(id).pop().replace(ASSAY_NAME, "")
+                return BAIT_SEARCH.findall(id).pop().replace(ASSAY_NAME, "").replace("H", "")
             except IndexError:
                 raise Exception(
                     "Bait version cannot be identified from project/run ID."
