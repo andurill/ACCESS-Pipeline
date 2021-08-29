@@ -1,6 +1,6 @@
 ![Build Status](https://travis-ci.com/mskcc/ACCESS-Pipeline.svg?token=7e9uBYr6xqTkAeLnyoYR&branch=master)
 
-# This branch is no longer maintained. Use dmp_prod/master
+# Note: This branch is discontinued and no longer maintained. It is archived and is for reference only. Please use dmp_prod/master.
 
 # Getting Started
 
