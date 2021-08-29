@@ -1,5 +1,7 @@
 ![Build Status](https://travis-ci.com/mskcc/ACCESS-Pipeline.svg?token=7e9uBYr6xqTkAeLnyoYR&branch=master)
 
+# This branch is no longer maintained. Use dmp_prod/master
+
 # Getting Started
 
 Disclaimer: Running the pipeline depends on installation of certain dependencies. Moving to docker containers is the long term solution for this. For now these tools must be previously installed:
