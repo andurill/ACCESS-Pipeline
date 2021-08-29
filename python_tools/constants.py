@@ -162,7 +162,8 @@ FEMALE = "Female"
 ALLOWED_SEQUENCERS = ["HISEQ", "NOVASEQ"]
 EXPECTED_BAIT_VERSION = "v1"
 ASSAY_NAME = "ACCESS"
-PROJECT_NAME = re.compile("^" + ASSAY_NAME + "v[0-9]-[A-Za-z]+-[0-9]{8}.*")
+#PROJECT_NAME = re.compile("^" + ASSAY_NAME + "v[0-9]-[A-Za-z]+-[0-9]{8}.*")
+PROJECT_NAME = re.compile("^" + ASSAY_NAME + "[H]{0,1}v[0-9]-[A-Za-z]+-[0-9]{8}.*")
 BAIT_SEARCH = re.compile("^" + ASSAY_NAME + "v[0-9]")
 MERGED_LANE_VALUE = "0"
 
@@ -696,7 +697,7 @@ def IS_EXONIC_CLASS(Gene, VariantClass, Coordinate):
     elif any(
         [
             Gene == "MET"
-            and VariantClass == "Intron"
+            and VariantClass in ["Intron", "Splice_Region"]
             and Coordinate >= 116411708
             and Coordinate <= 116414935
         ]
